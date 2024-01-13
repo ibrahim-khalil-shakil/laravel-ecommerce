@@ -58,19 +58,21 @@ class AuthenticationController extends Controller
         }
     }
 
-    public function setSession($user){
+    public function setSession($user)
+    {
         return request()->session()->put([
-            'userId'=>encryptor('encrypt',$user->id),
-            'userName'=>encryptor('encrypt',$user->name),
-            'role'=>encryptor('encrypt',$user->role->type),
-            'roleIdentity'=>encryptor('encrypt',$user->role->identity),
+            'userId' => encryptor('encrypt', $user->id),
+            'userName' => encryptor('encrypt', $user->name),
+            'role' => encryptor('encrypt', $user->role->type),
+            'roleIdentity' => encryptor('encrypt', $user->role->identity),
             'language' => encryptor('encrypt', $user->language),
-            'image'=> $user->image??'No Image Found'
+            'image' => $user->image ?? 'No Image Found'
         ]);
     }
 
-    public function signOut(){
-       request()->session()->flush();
-       return redirect('login')->with($this->resMessageHtml(false, 'error', currentUserId()));
+    public function signOut()
+    {
+        request()->session()->flush();
+        return redirect('login')->with($this->resMessageHtml(false, 'error', currentUserId()));
     }
 }

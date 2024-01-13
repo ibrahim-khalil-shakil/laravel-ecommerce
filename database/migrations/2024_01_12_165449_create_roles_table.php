@@ -19,9 +19,9 @@ return new class extends Migration
         });
         DB::table('roles')->insert([
             [
-                'type'=>'Super Admin',
-                'identity'=>'superadmin',
-                'created_at'=>Carbon::now()
+                'type' => 'Super Admin',
+                'identity' => 'superadmin',
+                'created_at' => Carbon::now()
             ], [
                 'type' => 'Admin',
                 'identity' => 'admin',
@@ -39,7 +39,7 @@ return new class extends Migration
                 'identity' => 'customer',
                 'created_at' => Carbon::now()
             ]
-            ]);
+        ]);
     }
 
     /**
