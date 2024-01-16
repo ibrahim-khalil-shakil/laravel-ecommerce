@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->date('dob')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('is_active')->default(true);
             $table->text('bio')->nullable();
             $table->string('social_links')->nullable();
             $table->string('language')->default('en');

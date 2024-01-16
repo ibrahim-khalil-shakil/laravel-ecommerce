@@ -13,7 +13,7 @@ class AuthenticationController extends Controller
 {
     public function signUpForm()
     {
-        return view('authentication.register');
+        return view('Backend.Authentication.register');
     }
 
     public function signUpStore(SignUpRequest $request)
@@ -37,7 +37,7 @@ class AuthenticationController extends Controller
 
     public function signInForm()
     {
-        return view('authentication.login');
+        return view('Backend.Authentication.login');
     }
 
     public function signInCheck(SignInRequest $request)
@@ -73,6 +73,6 @@ class AuthenticationController extends Controller
     public function signOut()
     {
         request()->session()->flush();
-        return redirect('login')->with($this->resMessageHtml(false, 'error', currentUserId()));
+        return redirect('login')->with('danger', 'Succesfully Logged Out');
     }
 }
