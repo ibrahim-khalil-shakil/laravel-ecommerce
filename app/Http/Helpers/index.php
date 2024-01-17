@@ -16,8 +16,8 @@ function encryptor($action, $string)
     // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
     $iv = substr(hash('sha256', $secret_iv), 0, 16);
 
-    //do the encryption given text/string/number
-    if ($action = 'encrypt') {
+    //do the encyption given text/string/number
+    if ($action == 'encrypt') {
         $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
         $output = base64_encode($output);
     } else if ($action == 'decrypt') {

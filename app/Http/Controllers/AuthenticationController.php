@@ -30,8 +30,8 @@ class AuthenticationController extends Controller
             else
                 return redirect('login')->with('error', 'Data is not Saved. Please try again');
         } catch (Exception $e) {
+            // dd($e);
             return redirect('login')->with('error', 'Registration Failed. Please try again');
-            dd($e);
         }
     }
 
@@ -53,8 +53,8 @@ class AuthenticationController extends Controller
             } else
                 return redirect()->route('login')->with('error', 'Invalid Username. Please try again');
         } catch (Exception $e) {
-            return redirect('login')->with('error', 'Login Failed. Please try again');
             dd($e);
+            return redirect('login')->with('error', 'Login Failed. Please try again');
         }
     }
 

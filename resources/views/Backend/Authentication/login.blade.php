@@ -7,16 +7,23 @@
             <p class="login-box-msg">Sign in to start your session</p>
     
             <form action="{{route('login.check')}}" method="post">
+                @csrf
+                @if($errors->has('username'))
+                <small class="d-block text-danger">{{$errors->first('username')}}</small>
+                @endif
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Username" name="username" value="{{old('username')}}">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
                 </div>
+                @if($errors->has('password'))
+                <small class="d-block text-danger">{{$errors->first('password')}}</small>
+                @endif
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>

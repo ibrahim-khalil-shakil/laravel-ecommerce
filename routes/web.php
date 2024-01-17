@@ -14,15 +14,38 @@ use App\Http\Controllers\AuthenticationController;
 |
 */
 
-
-
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('superadmin');
-
-
 Route::get('/register', [AuthenticationController::class, 'signUpForm'])->name('register');
 Route::post('/register', [AuthenticationController::class, 'signUpStore'])->name('register.store');
 Route::get('/login', [AuthenticationController::class, 'signInForm'])->name('login');
 Route::post('/login', [AuthenticationController::class, 'signInCheck'])->name('login.check');
 Route::get('/logOut', [AuthenticationController::class, 'signOut'])->name('logOut');
+
+
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Route::get('/dashboard', function () {
+//     dd("Reached the dashboard route.");
+//     return view('dashboard');
+// })->name('dashboard')->middleware('superadmin');
+
+// Route::middleware(['superadmin'])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard')->middleware('superadmin');
+
+
+// Route::group(['middleware' => ['auth', 'superadmin']], function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });

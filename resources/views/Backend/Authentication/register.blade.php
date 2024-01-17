@@ -8,30 +8,42 @@
 
         <form action="{{route('register.store')}}" method="post">
             @csrf
+            @if($errors->has('fullName'))
+            <small class="d-block text-danger">{{$errors->first('fullName')}}</small>
+            @endif
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Full name" name="fullName" value="{{old()}}">
+                <input type="text" class="form-control" placeholder="Full name" name="fullName" value="{{old('name')}}">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-user"></span>
                     </div>
                 </div>
             </div>
+            @if($errors->has('contactNumber'))
+            <small class="d-block text-danger">{{$errors->first('contactNumber')}}</small>
+            @endif
             <div class="input-group mb-3">
-                <input type="tel" class="form-control" placeholder="Contact" name="contactNumber">
+                <input type="tel" class="form-control" placeholder="Contact" name="contactNumber" value="{{old('contact_number')}}">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-phone"></span>
                     </div>
                 </div>
             </div>
+            @if($errors->has('emailAddress'))
+            <small class="d-block text-danger">{{$errors->first('emailAddress')}}</small>
+            @endif
             <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email" name="emailAddress">
+                <input type="email" class="form-control" placeholder="Email" name="emailAddress" value="{{old('email')}}">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
                     </div>
                 </div>
             </div>
+            @if($errors->has('password'))
+            <small class="d-block text-danger">{{$errors->first('password')}}</small>
+            @endif
             <div class="input-group mb-3">
                 <input type="password" class="form-control" placeholder="Password" name="password">
                 <div class="input-group-append">
@@ -40,6 +52,9 @@
                     </div>
                 </div>
             </div>
+            @if($errors->has('password_confirmation'))
+            <small class="d-block text-danger">{{$errors->first('password_confirmation')}}</small>
+            @endif
             <div class="input-group mb-3">
                 <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
                 <div class="input-group-append">
