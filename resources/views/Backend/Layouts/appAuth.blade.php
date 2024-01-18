@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title','Title')</title>
+    <title>{{ENV('APP_NAME')}} | @yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -20,7 +20,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>Panel</a>
+            <a href="#"><b>Admin</b>Panel</a>
         </div>
 
         @yield('content')
