@@ -63,7 +63,7 @@ $(function () {
     IN: 800, // India
     GB: 320, // Great Britain
     RU: 3000 // Russia
-  }
+  } 
   // World map by jvectormap
   $('#world-map').vectorMap({
     map: 'usa_en',

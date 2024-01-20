@@ -21,7 +21,7 @@ Route::get('/login', [auth::class, 'signInForm'])->name('login');
 Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logOut', [auth::class, 'signOut'])->name('logOut');
 
-Route::get('/', [dashboard::class, 'index'])->name('dashboard')->middleware('superadmin');
+Route::get('/', [dashboard::class, 'index'])->name('dashboard')->middleware('checkAuth');
 
 
 

@@ -35,10 +35,6 @@ return new class extends Migration
                 'type' => 'Seller',
                 'identity' => 'seller',
                 'created_at' => Carbon::now()
-            ], [
-                'type' => 'Customer',
-                'identity' => 'customer',
-                'created_at' => Carbon::now()
             ]
         ]);
     }
