@@ -24,7 +24,7 @@ class AuthenticationController extends Controller
             $user->email = $request->emailAddress;
             $user->contact_number = $request->contactNumber;
             $user->password = Hash::make($request->password);
-            $user->role_id = 4; 
+            $user->role_id = 2; 
             if ($user->save())
                 return redirect('login')->with('success', 'Registration Completed');
             else

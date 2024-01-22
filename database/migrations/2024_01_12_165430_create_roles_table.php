@@ -27,14 +27,6 @@ return new class extends Migration
                 'type' => 'Admin',
                 'identity' => 'admin',
                 'created_at' => Carbon::now()
-            ], [
-                'type' => 'Manager',
-                'identity' => 'manager',
-                'created_at' => Carbon::now()
-            ], [
-                'type' => 'Seller',
-                'identity' => 'seller',
-                'created_at' => Carbon::now()
             ]
         ]);
     }
