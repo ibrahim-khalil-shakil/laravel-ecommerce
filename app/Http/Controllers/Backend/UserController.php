@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('Backend.Users.index');
+        $users=User::get();
+        return view('Backend.Users.index', compact('users'));
     }
 
     /**
