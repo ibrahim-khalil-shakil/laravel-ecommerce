@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Exception;
 
 class UserController extends Controller
 {
@@ -13,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::get();
+        $users = User::get();
         return view('Backend.Users.index', compact('users'));
     }
 
@@ -22,7 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $role=Role::get();
+        return view('Backend.Users.create', compact('role'));
     }
 
     /**
@@ -30,13 +34,39 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $user = new User;
+            $user->name = $request->fullName;
+            $user->email = $request->emailAddress;
+            $user->contact_number = $request->contact_Number;
+            $user->role_id = $request->roleId;
+            $user->address = $request->fullAddress;
+            $user->bio = $request->bio;
+            $user->dob = $request->dob;
+            $user->social_links = $request->socialLinks;
+            $user->status = $request->status;
+            $user->full_access = $request->fullAccess;
+            $user->language = 'en';
+            $user->password = Hash::make($request->password);
+            if ($request->fileHas('image')) {
+                $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/users'), $imageName);
+                $user->image = $imageName;
+            }
+            if ($user->save())
+                return redirect()->route('user.index')->with('success', 'Data Saved');
+            else
+                redirect()->back()->with('error', 'Please Try Again');
+        } catch (Exception $e) {
+            dd($e);
+            return redirect()->back()->with('error', 'Please Try Again');
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(User $user)
     {
         //
     }
@@ -44,24 +74,62 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $user = User::findOrFail(encryptor('decrypt', $id));
+        return view('Backend.Users.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $user = User::findOrFail(encryptor('decrypt', $id));
+            $user->name = $request->fullName;
+            $user->email = $request->emailAddress;
+            $user->contact_number = $request->contact_Number;
+            $user->role_id = $request->roleId;
+            $user->address = $request->fullAddress;
+            $user->bio = $request->bio;
+            $user->dob = $request->dob;
+            $user->social_links = $request->socialLinks;
+            $user->status = $request->status;
+            $user->full_access = $request->fullAccess;
+            $user->language = 'en';
+
+            if ($request->password)
+                $user->password = Hash::make($request->password);
+
+            if ($request->fileHas('image')) {
+                $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/users'), $imageName);
+                $user->image = $imageName;
+            }
+            if ($user->save())
+                return redirect()->route('user.index')->with('success', 'Data Saved');
+            else
+                redirect()->back()->with('error', 'Please Try Again');
+        } catch (Exception $e) {
+            dd($e);
+            return redirect()->back()->with('error', 'Please Try Again');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail(encryptor('decrypt', $id));
+        $image_path = public_path('uploads/users/') . $user->image;
+
+        if ($user->delete()) {
+            if (File::exists($image_path))
+                File::delete($image_path);
+
+            return redirect()->back()->with('danger', 'Data Deleted');
+        }
     }
 }

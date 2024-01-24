@@ -227,10 +227,24 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('users')}}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>Users</p>
+                            <a href="{{route('users.index')}}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>Users</p><i class="right fas fa-angle-left"></i>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('users.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>User List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('users.create')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add User</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">

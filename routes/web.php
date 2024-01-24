@@ -23,7 +23,7 @@ Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logOut', [auth::class, 'signOut'])->name('logOut');
 
 Route::get('/', [dashboard::class, 'index'])->name('dashboard')->middleware('checkAuth');
-Route::get('/users', [user::class, 'index'])->name('users');
+Route::resource('/users', user::class);
 
 
 
