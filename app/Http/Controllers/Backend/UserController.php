@@ -8,6 +8,7 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Exception;
+use File;
 
 class UserController extends Controller
 {
@@ -38,7 +39,7 @@ class UserController extends Controller
             $user = new User;
             $user->name = $request->fullName;
             $user->email = $request->emailAddress;
-            $user->contact_number = $request->contact_Number;
+            $user->contact_number = $request->contactNumber;
             $user->role_id = $request->roleId;
             $user->address = $request->fullAddress;
             $user->bio = $request->bio;
@@ -48,7 +49,7 @@ class UserController extends Controller
             $user->full_access = $request->fullAccess;
             $user->language = 'en';
             $user->password = Hash::make($request->password);
-            if ($request->fileHas('image')) {
+            if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/users'), $imageName);
                 $user->image = $imageName;
@@ -102,7 +103,7 @@ class UserController extends Controller
             if ($request->password)
                 $user->password = Hash::make($request->password);
 
-            if ($request->fileHas('image')) {
+            if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/users'), $imageName);
                 $user->image = $imageName;
