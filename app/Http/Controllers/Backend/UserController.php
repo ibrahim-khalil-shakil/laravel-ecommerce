@@ -78,7 +78,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail(encryptor('decrypt', $id));
-        return view('Backend.Users.edit', compact('user'));
+        $role = Role::get();
+        return view('Backend.Users.edit', compact('user', 'role'));
     }
 
     /**
@@ -90,7 +91,7 @@ class UserController extends Controller
             $user = User::findOrFail(encryptor('decrypt', $id));
             $user->name = $request->fullName;
             $user->email = $request->emailAddress;
-            $user->contact_number = $request->contact_Number;
+            $user->contact_number = $request->contactNumber;
             $user->role_id = $request->roleId;
             $user->address = $request->fullAddress;
             $user->bio = $request->bio;
@@ -130,7 +131,7 @@ class UserController extends Controller
             if (File::exists($image_path))
                 File::delete($image_path);
 
-            return redirect()->back()->with('danger', 'Data Deleted');
+            return redirect()->back()->with('danger', 'Data Deleted'); 
         }
     }
 }

@@ -26,9 +26,9 @@
                 <!-- left column -->
                 <div class="col-md-12">
                     <!-- general form elements -->
-                    <div class="card card-primary">
+                    <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Add New User</h3>
+                            <h3 class="card-title">Insert User Data</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -121,13 +121,18 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="fullAccess">Full Access</label>
-                                    <input type="checkbox" name="fullAccess" value="1" data-bootstrap-switch data-off-color="danger"
-                                        data-on-color="success" {{ old('fullAccess') == 1 ? 'checked' : '' }}>
+                                    <select class="form-control" name="fullAccess">
+                                        <option value="0" {{ old('fullAccess') == 0 ? 'selected' : '' }}>No</option>
+                                        <option value="1" {{ old('fullAccess') == 1 ? 'selected' : '' }}>Yes</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="status">Status</label>
-                                    <input type="checkbox" name="status" value="1" @if(old('status') == 1) checked @endif data-bootstrap-switch
-                                        data-off-color="danger" data-on-color="success">
+                                    <select class="form-control" name="status">
+                                        <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Active</option>
+                                        <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Inactive
+                                        </option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.card-body -->
