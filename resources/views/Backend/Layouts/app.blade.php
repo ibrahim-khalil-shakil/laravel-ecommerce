@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ENV('APP_NAME')}} | @yield('title')</title>
+    <title>{{ ENV('APP_NAME') }} | @yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('public/Backend/plugins/fontawesome-free/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/Backend/plugins/fontawesome-free-6.5.1-web/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/Backend/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/Backend/plugins/fontawesome-free-6.5.1-web/css/all.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('public/Backend/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/Backend/dist/css/adminlte.min.css') }}">
     @stack('styles')
 </head>
 
@@ -25,7 +25,8 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="javascript:void(0)" class="nav-link">Home</a>
@@ -70,7 +71,7 @@
                         <a href="javascript:void(0)" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{asset('public/Backend/dist/img/user1-128x128.jpg')}}" alt="User Avatar"
+                                <img src="{{ asset('public/Backend/dist/img/user1-128x128.jpg') }}" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -87,7 +88,7 @@
                         <a href="javascript:void(0)" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{asset('public/Backend/dist/img/user8-128x128.jpg')}}" alt="User Avatar"
+                                <img src="{{ asset('public/Backend/dist/img/user8-128x128.jpg') }}" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -104,7 +105,7 @@
                         <a href="javascript:void(0)" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{asset('public/Backend/dist/img/user3-128x128.jpg')}}" alt="User Avatar"
+                                <img src="{{ asset('public/Backend/dist/img/user3-128x128.jpg') }}" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -155,7 +156,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"
+                        role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
@@ -167,7 +169,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="javascript:void(0)" class="brand-link">
-                <img src="{{asset('public/Backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
+                <img src="{{ asset('public/Backend/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
@@ -177,8 +179,8 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{asset('public/Backend/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2"
-                            alt="User Image">
+                        <img src="{{ asset('public/Backend/dist/img/user2-160x160.jpg') }}"
+                            class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="javascript:void(0)" class="d-block">Alexander Pierce</a>
@@ -212,35 +214,21 @@
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Simple Search</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Enhanced</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user.index')}}" class="nav-link">
+                            <a href="{{ route('user.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Users</p><i class="right fas fa-angle-left"></i>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('user.index')}}" class="nav-link">
+                                    <a href="{{ route('user.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>User List</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('user.create')}}" class="nav-link">
+                                    <a href="{{ route('user.create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add User</p>
                                     </a>
@@ -249,18 +237,23 @@
                         </li>
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>Roles</p>
+                                <i class="nav-icon fas fa-user-tie"></i>
+                                <p>Roles</p><i class="right fas fa-angle-left"></i>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Charts
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('role.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Role List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('role.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Role</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-header">EXAMPLES</li>
                         <li class="nav-item">
@@ -270,69 +263,6 @@
                                     Calendar
                                     <span class="badge badge-info right">2</span>
                                 </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Pages
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link ">
-                                <i class="nav-icon far fa-plus-square"></i>
-                                <p>
-                                    Extras
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-header">MISCELLANEOUS</li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon fas fa-ellipsis-h"></i>
-                                <p>Tabbed IFrame Plugin</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>Documentation</p>
-                            </a>
-                        </li>
-                        <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="fas fa-circle nav-icon"></i>
-                                <p>Level 1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="fas fa-circle nav-icon"></i>
-                                <p>Level 1</p>
-                            </a>
-                        </li>
-                        <li class="nav-header">LABELS</li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon far fa-circle text-danger"></i>
-                                <p class="text">Important</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>Warning</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Informational</p>
                             </a>
                         </li>
                     </ul>
@@ -365,27 +295,27 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="{{asset('public/Backend/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('public/Backend/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{asset('public/Backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('public/Backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('public/Backend/dist/js/adminlte.js')}}"></script>
+    <script src="{{ asset('public/Backend/dist/js/adminlte.js') }}"></script>
     {{-- TOASTER --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <script>
-        @if(Session::has('success'))  
-        				toastr.success("{{ Session::get('success') }}");  
-        		@endif  
-        		@if(Session::has('info'))  
-        				toastr.info("{{ Session::get('info') }}");  
-        		@endif  
-        		@if(Session::has('warning'))  
-        				toastr.warning("{{ Session::get('warning') }}");  
-        		@endif  
-        		@if(Session::has('error'))  
-        				toastr.error("{{ Session::get('error') }}");  
-        		@endif  
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+        @if (Session::has('info'))
+            toastr.info("{{ Session::get('info') }}");
+        @endif
+        @if (Session::has('warning'))
+            toastr.warning("{{ Session::get('warning') }}");
+        @endif
+        @if (Session::has('error'))
+            toastr.error("{{ Session::get('error') }}");
+        @endif
     </script>
     @stack('scripts')
 </body>

@@ -32,7 +32,8 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('user.update', encryptor('encrypt', $user->id)) }}" method="post">
+                        <form action="{{ route('user.update', encryptor('encrypt', $user->id)) }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="card-body row">
@@ -133,9 +134,11 @@
                                 <div class="form-group col-md-6">
                                     <label for="status">Status</label>
                                     <select class="form-control" name="status">
-                                        <option value="1" {{ old('status', $user->status) == 1 ? 'selected' : '' }}>Active
+                                        <option value="1" {{ old('status', $user->status) == 1 ? 'selected' : '' }}>
+                                            Active
                                         </option>
-                                        <option value="0" {{ old('status', $user->status) == 0 ? 'selected' : '' }}>Inactive
+                                        <option value="0" {{ old('status', $user->status) == 0 ? 'selected' : '' }}>
+                                            Inactive
                                         </option>
                                     </select>
                                 </div>

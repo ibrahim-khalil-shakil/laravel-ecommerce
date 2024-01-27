@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dashboard;
 use App\Http\Controllers\Backend\UserController as user;
+use App\Http\Controllers\Backend\RoleController as role;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::get('/logOut', [auth::class, 'signOut'])->name('logOut');
 
 Route::get('/', [dashboard::class, 'index'])->name('dashboard')->middleware('checkAuth');
 Route::resource('/user', user::class);
+Route::resource('/role', role::class);
 
 
 

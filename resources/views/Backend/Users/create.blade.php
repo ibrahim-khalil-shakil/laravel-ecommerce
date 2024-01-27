@@ -32,7 +32,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('user.store') }}" method="post">
+                        <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body row">
                                 <div class="form-group col-md-6">
@@ -40,7 +40,7 @@
                                     <input type="text" class="form-control" name="fullName"
                                         value="{{ old('fullName') }}">
                                     @if ($errors->has('fullName'))
-                                        <span class="text-danger"> {{ $errors->first('fullName')}}</span>
+                                        <span class="text-danger"> {{ $errors->first('fullName') }}</span>
                                     @endif
                                 </div>
                                 <div class="form-group col-md-6">
