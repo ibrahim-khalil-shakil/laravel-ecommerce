@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dashboard;
 use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\RoleController as role;
-
+use App\Http\Controllers\Frontend\HomeController as home;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,18 +17,20 @@ use App\Http\Controllers\Backend\RoleController as role;
 |
 */
 
+Route::get('/', [home::class, 'index'])->name('home');
+
 Route::get('/register', [auth::class, 'signUpForm'])->name('register');
 Route::post('/register', [auth::class, 'signUpStore'])->name('register.store');
 Route::get('/login', [auth::class, 'signInForm'])->name('login');
 Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logOut', [auth::class, 'signOut'])->name('logOut');
 
-Route::get('/', [dashboard::class, 'index'])->name('dashboard')->middleware('checkAuth');
+Route::middleware(['checkAuth'])->prefix('admin')->group(function () {
+        Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+    });
+
 Route::resource('/user', user::class);
 Route::resource('/role', role::class);
-
-
-
 
 // Route::get('/', function () {
 //     return view('welcome');
