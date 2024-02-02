@@ -205,49 +205,52 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="javascript:void(0)" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="{{route('dashboard')}}" class="nav-link {{(request()->is('/'))?'active':''}}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
-                                    <i class="right fas fa-angle-left"></i>
+                                    <i class="right"></i>
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('user.index') }}" class="nav-link">
+                        <li class="nav-item {{(request()->is('user*'))?'menu-open':''}}">
+                            <a href="{{ route('user.index') }}"
+                                class="nav-link {{(request()->is('user*'))?'active':''}}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Users</p><i class="right fas fa-angle-left"></i>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('user.index') }}" class="nav-link">
+                                    <a href="{{ route('user.index') }}"
+                                        class="nav-link {{ request()->is('user') ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>User List</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('user.create') }}" class="nav-link">
+                                    <a href="{{ route('user.create') }}"
+                                        class="nav-link {{(request()->is('user/create'))?'active':''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add User</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">
+                        <li class="nav-item {{(request()->is('role*'))?'menu-open':''}}">
+                            <a href="{{ route('role.index') }}" class="nav-link {{(request()->is('role*'))?'active':''}}">
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 <p>Roles</p><i class="right fas fa-angle-left"></i>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('role.index') }}" class="nav-link">
+                                    <a href="{{ route('role.index') }}" class="nav-link {{(request()->is('role'))?'active':''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Role List</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('role.create') }}" class="nav-link">
+                                    <a href="{{ route('role.create') }}" class="nav-link {{(request()->is('role/create'))?'active':''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Role</p>
                                     </a>
