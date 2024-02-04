@@ -10,13 +10,17 @@ use Exception;
 
 class PermissionController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index($id)
     {
-       $role = Role::findOrFail(encrypt('decrypt',$id));
-       $permission = Permission::where('role_id',encrypt('decrypt',$id))->get();
+        // $role = Role::findOrFail(encryptor('decrypt', $id));
+        // $permission = Permission::where('role_id', encryptor('decrypt', $id))->get();
+        // return view('Backend.permission.index', compact('role', 'permission'));
+
+       $role = Role::findOrFail(encryptor('decrypt',$id));
+       $permission = Permission::where('role_id',encryptor('decrypt',$id))->get();
        return view('Backend.Permissions.index', compact('role','permission'));
     }
 
@@ -47,7 +51,7 @@ class PermissionController extends Controller
                 $data->name=$permission;
                 $data->save();
             }
-            return redirect()->route('Backend.Roles.index')->with('success', 'Permission Saved');
+            return redirect()->route('role.index')->with('success', 'Permission Saved');
         } catch (Exception $e) {
             dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');

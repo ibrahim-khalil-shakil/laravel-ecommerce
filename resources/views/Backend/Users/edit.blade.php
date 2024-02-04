@@ -169,24 +169,5 @@
     <!-- Bootstrap Switch -->
     <script src="{{ asset('public/Backend/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
     <!-- Page specific script -->
-    <script>
-        $(function() {
-            bsCustomFileInput.init();
-
-            $("input[data-bootstrap-switch]").each(function() {
-                $(this).bootstrapSwitch('state', $(this).prop('checked'));
-            });
-
-            // Set hidden input value based on checkbox state
-            $('input[name="fullAccess"]').on('switchChange.bootstrapSwitch', function(event, state) {
-                // If checked, set hidden input value to 1; otherwise, set it to 0
-                $('input[name="fullAccess"]').val(state ? 1 : 0);
-            });
-            // Set hidden input value based on checkbox state
-            $('input[name="status"]').on('switchChange.bootstrapSwitch', function(event, state) {
-                // If checked, set hidden input value to 1; otherwise, set it to 0
-                $('input[name="status"]').val(state ? 1 : 0);
-            });
-        });
-    </script>
+   
 @endpush

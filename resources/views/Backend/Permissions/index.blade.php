@@ -97,17 +97,12 @@
 <script src="{{ asset('public/Backend/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
 <!-- Page specific script -->
 <script>
-    $(function() {
-            bsCustomFileInput.init();
+    function checkAll(e){
+        if($(e).prop('checked')==true)
+            $(e).next('.list-group').find('input').attr('checked','checked');
+        else
+            $(e).next('.list-group').find('input').removeAttr('checked','checked');
+    }
 
-            $("input[data-bootstrap-switch]").each(function() {
-                $(this).bootstrapSwitch('state', $(this).prop('checked'));
-            });
-
-            // Initialize Bootstrap Switch for the fullAccess checkbox
-            $('input[name="fullAccess"]').bootstrapSwitch();
-            // Initialize Bootstrap Switch for the status checkbox
-            $('input[name="status"]').bootstrapSwitch();
-        });
 </script>
 @endpush

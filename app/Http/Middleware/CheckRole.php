@@ -24,11 +24,11 @@ class CheckRole
             $user = User::where('status', 1)->where('id', currentUserId())->first();
             if (!$user) {
                 return redirect()->route('logOut');
-            } elseif ($user->full_access == 1) {
+            } elseif ($user->full_access == "1") {
                 return $next($request);
             } else {
-                $auto_accept = ['POST', 'PUT'];
-                if (in_array($request->route()->method[0], $auto_accept)) {
+                $auto_accept = array("POST", "PUT");
+                if (in_array($request->route()->methods[0], $auto_accept)) {
                     return $next($request);
                 } else {
                     if (
