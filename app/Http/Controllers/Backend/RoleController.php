@@ -37,19 +37,13 @@ class RoleController extends Controller
             $role->type = $request->roleType;
             $role->identity = $request->roleIdentity;
             if ($role->save()) {
-                return redirect()
-                    ->route('role.index')
-                    ->with('success', 'Data Saved');
+                return redirect()->route('role.index')->with('success', 'Data Saved');
             } else {
-                redirect()
-                    ->back()
-                    ->with('error', 'Please Try Again');
+                redirect()->back()->with('error', 'Please Try Again');
             }
         } catch (Exception $e) {
             dd($e);
-            return redirect()
-                ->back()
-                ->with('error', 'Please Try Again');
+            return redirect()->back()->with('error', 'Please Try Again');
         }
     }
 
@@ -80,19 +74,13 @@ class RoleController extends Controller
             $role->type = $request->roleType;
             $role->identity = $request->roleIdentity;
             if ($role->save()) {
-                return redirect()
-                    ->route('role.index')
-                    ->with('success', 'Data Saved');
+                return redirect()->route('role.index')->with('success', 'Data Saved');
             } else {
-                redirect()
-                    ->back()
-                    ->with('error', 'Please Try Again');
+                redirect()->back()->with('error', 'Please Try Again');
             }
         } catch (Exception $e) {
             dd($e);
-            return redirect()
-                ->back()
-                ->with('error', 'Please Try Again');
+            return redirect()->back()->with('error', 'Please Try Again');
         }
     }
 
@@ -103,9 +91,7 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail(encryptor('decrypt', $id));
         if ($role->delete()) {
-            return redirect()
-                ->back()
-                ->with('danger', 'Data Deleted');
+            return redirect()->back()->with('danger', 'Data Deleted');
         }
     }
 }

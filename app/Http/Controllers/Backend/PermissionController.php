@@ -19,9 +19,9 @@ class PermissionController extends Controller
         // $permission = Permission::where('role_id', encryptor('decrypt', $id))->get();
         // return view('Backend.permission.index', compact('role', 'permission'));
 
-       $role = Role::findOrFail(encryptor('decrypt',$id));
-       $permission = Permission::where('role_id',encryptor('decrypt',$id))->get();
-       return view('Backend.Permissions.index', compact('role','permission'));
+        $role = Role::findOrFail(encryptor('decrypt', $id));
+        $permission = Permission::where('role_id', encryptor('decrypt', $id))->get();
+        return view('Backend.Permissions.index', compact('role', 'permission'));
     }
 
     /**
@@ -44,11 +44,11 @@ class PermissionController extends Controller
     {
         try {
             //delete permission before saved
-            Permission::where('role_id',encryptor('decrypt',$role))->delete();
-            foreach($request->permission as $permission){
+            Permission::where('role_id', encryptor('decrypt', $role))->delete();
+            foreach ($request->permission as $permission) {
                 $data = new Permission;
-                $data->role_id=encryptor('decrypt',$role);
-                $data->name=$permission;
+                $data->role_id = encryptor('decrypt', $role);
+                $data->name = $permission;
                 $data->save();
             }
             return redirect()->route('role.index')->with('success', 'Permission Saved');

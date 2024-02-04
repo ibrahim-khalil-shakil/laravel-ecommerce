@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $role=Role::get();
+        $role = Role::get();
         return view('Backend.Users.create', compact('role'));
     }
 
@@ -132,7 +132,7 @@ class UserController extends Controller
             if (File::exists($image_path))
                 File::delete($image_path);
 
-            return redirect()->back()->with('danger', 'Data Deleted'); 
+            return redirect()->back()->with('danger', 'Data Deleted');
         }
     }
 }
