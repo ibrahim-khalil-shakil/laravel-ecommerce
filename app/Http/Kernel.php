@@ -2,8 +2,8 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\CheckAuth;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
 
 class Kernel extends HttpKernel
 {
@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
 
         'superadmin' => \App\Http\Middleware\IsSuperAdmin::class,
         'checkAuth'=> \App\Http\Middleware\CheckAuth::class,
+        'checkRole'=> \App\Http\Middleware\CheckRole::class,
 
     ];
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\DashboardController as dashboard;
 use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\RoleController as role;
 use App\Http\Controllers\Frontend\HomeController as home;
+use App\Http\Controllers\Backend\PermissionController as permission;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,11 +27,16 @@ Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logOut', [auth::class, 'signOut'])->name('logOut');
 
 Route::middleware(['checkAuth'])->prefix('admin')->group(function () {
-        Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
-    });
+    Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+});
 
-Route::resource('/user', user::class);
-Route::resource('/role', role::class);
+Route::middleware(['checkRole'])->prefix('admin')->group(function () {
+    Route::resource('/user', user::class);
+    Route::resource('/role', role::class);
+    Route::get('permission/{role}', [permission::class, 'index'])->name('permission.list');
+    Route::post('permission/{role}', [permission::class, 'save'])->name('permission.save');
+});
+
 
 // Route::get('/', function () {
 //     return view('welcome');

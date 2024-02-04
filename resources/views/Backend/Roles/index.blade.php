@@ -56,6 +56,10 @@
                                                     class="text-primary" title="Edit">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
+                                                <a href="{{ route('permission.list', encryptor('encrypt', $role->id)) }}"
+                                                    class="text-dark ml-2" title="Perission">
+                                                    <i class="fa-solid fa-lock"></i>
+                                                </a>
                                                 <form action="{{ route('role.destroy', encryptor('encrypt', $role->id)) }}"
                                                     method="post" class="d-inline">
                                                     @csrf

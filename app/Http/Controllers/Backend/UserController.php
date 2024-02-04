@@ -87,7 +87,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      */
     public function update(UpdateRequest $request, $id)
-    {
+    { 
         try {
             $user = User::findOrFail(encryptor('decrypt', $id));
             $user->name = $request->fullName;

@@ -35,7 +35,8 @@
                         <form action="{{ route('user.update', encryptor('encrypt', $user->id)) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
-                            @method('PATCH')
+                            @method('PATCH') 
+                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$user->id)}}">
                             <div class="card-body row">
                                 <div class="form-group col-md-6">
                                     <label for="fullName">Name</label>
