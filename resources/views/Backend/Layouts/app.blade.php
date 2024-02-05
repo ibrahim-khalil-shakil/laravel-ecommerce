@@ -169,7 +169,7 @@
             <a href="javascript:void(0)" class="brand-link">
                 <img src="{{ asset('public/Backend/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">{{encryptor('decrypt',request()->session()->get('role'))}}</span>
             </a>
 
             <!-- Sidebar -->
@@ -177,11 +177,11 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('public/Backend/dist/img/user2-160x160.jpg') }}"
-                            class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset('public/uploads/users/'.request()->session()->get('image')) }}"
+                            class="img-circle elevation-2" alt="img" width="50px" height="50px">
                     </div>
                     <div class="info">
-                        <a href="javascript:void(0)" class="d-block">Alexander Pierce</a>
+                        <a href="javascript:void(0)" class="d-block">{{encryptor('decrypt', request()->session()->get('userName'))}}</a>
                     </div>
                 </div>
 
