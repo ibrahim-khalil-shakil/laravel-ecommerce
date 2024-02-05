@@ -25,8 +25,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                            class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="javascript:void(0)" class="nav-link">Home</a>
@@ -156,8 +155,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"
-                        role="button">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
@@ -206,7 +204,8 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="{{route('dashboard')}}" class="nav-link {{ Route::is('dashboard') ? 'active' : '' }}">
+                            <a href="{{route('dashboard')}}"
+                                class="nav-link {{ Route::is('dashboard') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -215,8 +214,7 @@
                             </a>
                         </li>
                         <li class="nav-item {{Route::is('user*')?'menu-open':''}}">
-                            <a href="{{ route('user.index') }}"
-                                class="nav-link {{Route::is('user*')?'active':''}}">
+                            <a href="{{ route('user.index') }}" class="nav-link {{Route::is('user*')?'active':''}}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Users</p><i class="right fas fa-angle-left"></i>
                             </a>
@@ -244,13 +242,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('role.index') }}" class="nav-link {{Route::is('role.index')?'active':''}}">
+                                    <a href="{{ route('role.index') }}"
+                                        class="nav-link {{Route::is('role.index')?'active':''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Role List</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('role.create') }}" class="nav-link {{Route::is('role.create')?'active':''}}">
+                                    <a href="{{ route('role.create') }}"
+                                        class="nav-link {{Route::is('role.create')?'active':''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Role</p>
                                     </a>
