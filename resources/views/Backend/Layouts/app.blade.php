@@ -257,6 +257,94 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item {{Route::is('brand*')?'menu-open':''}}">
+                            <a href="{{ route('brand.index') }}" class="nav-link {{Route::is('brand*')?'active':''}}">
+                                <i class="nav-icon fa-brands fa-bandcamp"></i>
+                                <p>Brands</p><i class="right fas fa-angle-left"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('brand.index') }}"
+                                        class="nav-link {{Route::is('brand.index')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Brand List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('brand.create') }}"
+                                        class="nav-link {{Route::is('brand.create')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Brand</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{-- <li class="nav-item {{Route::is('category*')?'menu-open':''}}">
+                            <a href="{{ route('category.index') }}" class="nav-link {{Route::is('category*')?'active':''}}">
+                                <i class="nav-icon fas fa-user-tie"></i>
+                                <p>Categories</p><i class="fa-solid fa-layer-group"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('category.index') }}"
+                                        class="nav-link {{Route::is('category.index')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Category List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('category.create') }}"
+                                        class="nav-link {{Route::is('category.create')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Category</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item {{Route::is('subcategory*')?'menu-open':''}}">
+                            <a href="{{ route('subcategory.index') }}" class="nav-link {{Route::is('subcategory*')?'active':''}}">
+                                <i class="nav-icon fas fa-user-tie"></i>
+                                <p>Subcategories</p><i class="fa-solid fa-table-list"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('subcategory.index') }}"
+                                        class="nav-link {{Route::is('subcategory.index')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Subcategory List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('subcategory.create') }}"
+                                        class="nav-link {{Route::is('subcategory.create')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Subcategory</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item {{Route::is('product*')?'menu-open':''}}">
+                            <a href="{{ route('product.index') }}" class="nav-link {{Route::is('product*')?'active':''}}">
+                                <i class="nav-icon fas fa-user-tie"></i>
+                                <p>Products</p><i class="fa-solid fa-gift"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('product.index') }}"
+                                        class="nav-link {{Route::is('product.index')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Product List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('product.create') }}"
+                                        class="nav-link {{Route::is('product.create')?'active':''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Product</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
