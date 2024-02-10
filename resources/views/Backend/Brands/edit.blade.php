@@ -33,7 +33,8 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('brand.update', encryptor('encrypt', $brand->id)) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('brand.update', encryptor('encrypt', $brand->id)) }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="card-body row">
@@ -41,16 +42,20 @@
                             <div class="form-group col-md-6">
                                 <label for="status">Status</label>
                                 <select class="form-control" name="status">
-                                    <option value="2" {{ old('status', $brand->status)==2 ? 'selected' : '' }}>Pending</option>
-                                    <option value="1" {{ old('status', $brand->status)==1 ? 'selected' : '' }}>Active</option>
-                                    <option value="0" {{ old('status', $brand->status)==0 ? 'selected' : '' }}>Inactive
+                                    <option value="pending" {{ old('status', $brand->status)=='pending' ? 'selected' :
+                                        '' }}>Pending</option>
+                                    <option value="active" {{ old('status', $brand->status)=='active' ? 'selected' : ''
+                                        }}>Active</option>
+                                    <option value="inactive" {{ old('status', $brand->status)=='inactive' ? 'selected' :
+                                        '' }}>Inactive
                                     </option>
                                 </select>
                             </div>
                             @endif
                             <div class="form-group col-md-12">
                                 <label for="brandName">Brand Name</label>
-                                <input type="text" class="form-control" name="brandName" value="{{ old('brandName', $brand->name) }}">
+                                <input type="text" class="form-control" name="brandName"
+                                    value="{{ old('brandName', $brand->name) }}">
                                 @if ($errors->has('brandName'))
                                 <span class="text-danger"> {{ $errors->first('brandName') }}</span>
                                 @endif

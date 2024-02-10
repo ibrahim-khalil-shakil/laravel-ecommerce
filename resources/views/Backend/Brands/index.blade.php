@@ -58,8 +58,8 @@
                                     </td>
                                     <td class="text-center">
                                         <span
-                                            class="badge {{ ($brand->status == 1) ? 'badge-success' : (($brand->status == 0) ? 'badge-danger' : 'badge-warning') }}">
-                                            {{ ($brand->status == 1) ? 'Active' : (($brand->status == 0) ? 'Inactive' :
+                                            class="badge {{ ($brand->status == 'active') ? 'badge-success' : (($brand->status == 'inactive') ? 'badge-danger' : 'badge-warning') }}">
+                                            {{ ($brand->status == 'active') ? 'Active' : (($brand->status == 'inactive') ? 'Inactive' :
                                             'Pending') }}
                                         </span>
                                     </td>

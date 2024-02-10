@@ -77,15 +77,16 @@ class BrandController extends Controller
         try {
             $brand = Brand::findOrFail(encryptor('decrypt', $id));
             $brand->name = $request->brandName;
+            $brand->status = $request->status;
             if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/brands'), $imageName);
                 $brand->image = $imageName;
             }
             if ($brand->save())
-                return redirect()->route('brand.index')->with('success', 'Successfully Saved');
+                return redirect()->route('brand.index')->with('success', 'Successfully Updated');
             else
-                return redirect()->back()->with('error', 'Failed to save data');
+                return redirect()->back()->with('error', 'Failed to update data');
         } catch (Exception $e) {
             dd($e);
             return redirect()->back()->with('error', 'Something went wrong');

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->boolean('status')->nullable()->default(2)->comment('2=>pending 1=>active 0=>inactive');
+            $table->enum('status', ['pending', 'active', 'inactive'])->default('pending');
             $table->timestamps();
             $table->softDeletes();
         });

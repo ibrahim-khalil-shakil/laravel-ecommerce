@@ -40,9 +40,11 @@
                             <div class="form-group col-md-6">
                                 <label for="status">Status</label>
                                 <select class="form-control" name="status">
-                                    <option value="2" {{ old('status')==2 ? 'selected' : '' }}>Pending</option>
-                                    <option value="1" {{ old('status')==1 ? 'selected' : '' }}>Active</option>
-                                    <option value="0" {{ old('status')==0 ? 'selected' : '' }}>Inactive
+                                    <option value="pending" {{ old('status')=='pending' ? 'selected' : '' }}>Pending
+                                    </option>
+                                    <option value="active" {{ old('status')=='active' ? 'selected' : '' }}>Active
+                                    </option>
+                                    <option value="inactive" {{ old('status')=='inactive' ? 'selected' : '' }}>Inactive
                                     </option>
                                 </select>
                             </div>
