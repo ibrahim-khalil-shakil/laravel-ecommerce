@@ -53,7 +53,7 @@
                                 <tr>
                                     <td>{{ $brand->id }}</td>
                                     <td>{{ $brand->name }}</td>
-                                    <td><img src="{{asset('public/uploads/brands/'.$brand->image)}}" alt="img"
+                                    <td class="text-center"><img src="{{asset('public/uploads/brands/'.$brand->image)}}" alt="img"
                                             class="rounded-circle" height="50px" width="50px">
                                     </td>
                                     <td class="text-center">
