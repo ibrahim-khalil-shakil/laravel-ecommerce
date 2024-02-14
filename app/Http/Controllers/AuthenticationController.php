@@ -24,7 +24,7 @@ class AuthenticationController extends Controller
             $user->email = $request->emailAddress;
             $user->contact_number = $request->contactNumber;
             $user->password = Hash::make($request->password);
-            $user->role_id = 2; 
+            $user->role_id = 2;
             if ($user->save())
                 return redirect('login')->with('success', 'Registration Completed');
             else
@@ -63,6 +63,7 @@ class AuthenticationController extends Controller
         return request()->session()->put([
             'userId' => encryptor('encrypt', $user->id),
             'userName' => encryptor('encrypt', $user->name),
+            'accessType' => encryptor('encrypt', $user->full_access),
             'role' => encryptor('encrypt', $user->role->type),
             'roleIdentity' => encryptor('encrypt', $user->role->identity),
             'language' => encryptor('encrypt', $user->language),

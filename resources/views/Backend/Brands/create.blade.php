@@ -36,7 +36,7 @@
                     <form action="{{ route('brand.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body row">
-                            @if(!fullAccess())
+                            @if(fullAccess())
                             <div class="form-group col-md-6">
                                 <label for="status">Status</label>
                                 <select class="form-control" name="status">

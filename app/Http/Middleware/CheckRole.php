@@ -31,11 +31,9 @@ class CheckRole
                 if (in_array($request->route()->methods[0], $auto_accept)) {
                     return $next($request);
                 } else {
-                    if (
-                        Permission::where('role_id', $user->role_id)->where('name', $request->route()->getName())->exists()
-                    ) {
+                    if (Permission::where('role_id', $user->role_id)->where('name', $request->route()->getName())->exists())
                         return $next($request);
-                    } else {
+                    else {
                         return redirect()->back()->with('danger', "You don't have permission to access this page");
                     }
                 }
