@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('category_id');
+            $table->string('image')->nullable();
             $table->boolean('status')->default(1)->comment('1=>active 0=>inactive');
             $table->timestamps();
             $table->softDeletes();
