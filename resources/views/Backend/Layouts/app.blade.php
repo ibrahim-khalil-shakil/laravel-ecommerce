@@ -33,6 +33,9 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="javascript:void(0)" class="nav-link">Contact</a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{route('logOut')}}" class="nav-link text-danger">LogOut</a>
+                </li>
             </ul>
 
             <!-- Right navbar links -->
