@@ -1,5 +1,5 @@
 @extends('Backend.Layouts.app')
-@section('title', 'Add Category')
+@section('title', 'Add Subcategory')
 
 @section('content')
 <!-- Content Header (Page header) -->
@@ -7,13 +7,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Add Category</h1>
+                <h1>Add Subcategory</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Categories</a></li>
-                    <li class="breadcrumb-item active">Add Category</li>
+                    <li class="breadcrumb-item"><a href="{{ route('subcategory.index') }}">Subcategories</a></li>
+                    <li class="breadcrumb-item active">Add Subcategory</li>
                 </ol>
             </div>
         </div>
@@ -29,11 +29,11 @@
                 <!-- general form elements -->
                 <div class="card card-success">
                     <div class="card-header">
-                        <h3 class="card-title">Insert Category Data into Category Form</h3>
+                        <h3 class="card-title">Insert Subcategory Data into Subcategory Form</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('subcategory.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body row">
                             @if(fullAccess())
@@ -47,11 +47,27 @@
                                 </select>
                             </div>
                             @endif
-                            <div class="form-group col-md-12">
-                                <label for="categoryName">Category Name</label>
-                                <input type="text" class="form-control" name="categoryName" value="{{ old('categoryName') }}">
-                                @if ($errors->has('categoryName'))
-                                <span class="text-danger"> {{ $errors->first('categoryName') }}</span>
+                            <div class="form-group col-md-6">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="subcategoryName">Subcategory Name</label>
+                                <input type="text" class="form-control" name="subcategoryName" value="{{ old('subcategoryName') }}">
+                                @if ($errors->has('subcategoryName'))
+                                <span class="text-danger"> {{ $errors->first('subcategoryName') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="categoryId">Category</label>
+                                <select class="form-control" name="categoryId">
+                                    @forelse ($category as $cat)
+                                    <option value="{{$cat->id}}" {{old('categoryId')==$cat->id?'selected':''}}>
+                                        {{$cat->name}}</option>
+                                        @empty
+                                        <option value="">No Category Found</option>
+                                    @endforelse
+                                </select>
+                                @if ($errors->has('categoryId'))
+                                <span class="text-danger"> {{ $errors->first('categoryId') }}</span>
                                 @endif
                             </div>
                             <div class="form-group col-md-12">

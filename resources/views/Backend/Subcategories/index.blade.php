@@ -1,5 +1,5 @@
 @extends('Backend.Layouts.app')
-@section('title', 'Category List')
+@section('title', 'Subcategory List')
 
 @section('content')
 {{-- Content Header --}}
@@ -7,13 +7,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Category List</h1>
+                <h1>Subcategory List</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Categories</a></li>
-                    <li class="breadcrumb-item active">Category List</li>
+                    <li class="breadcrumb-item"><a href="{{ route('subcategory.index') }}">Subcategories</a></li>
+                    <li class="breadcrumb-item active">Subcategory List</li>
                 </ol>
             </div>
         </div>
@@ -29,11 +29,11 @@
                 <div class="card">
                     <div class="card-header row">
                         <div class="col-8">
-                            <h3 class="card-title">Displaying Category Data from Category Table</h3>
+                            <h3 class="card-title">Displaying Subcategory Data from Subcategory Table</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('category.create') }}" class="btn btn-success">
-                                <i class="fa-solid fa-square-plus"></i> Add New Category</a>
+                            <a href="{{ route('subcategory.create') }}" class="btn btn-success">
+                                <i class="fa-solid fa-square-plus"></i> Add New Subcategory</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -42,34 +42,36 @@
                             <thead class="text-center">
                                 <tr>
                                     <th>#</th>
-                                    <th>Category Name</th>
+                                    <th>Subcategory Name</th>
+                                    <th>Category</th>
                                     <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($categories as $category)
+                                @forelse ($subcategories as $subcategory)
                                 <tr>
-                                    <td>{{ $category->id }}</td>
-                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $subcategory->id }}</td>
+                                    <td>{{ $subcategory->name }}</td>
+                                    <td>{{ $subcategory?->category->name }}</td>
                                     <td class="text-center"><img
-                                            src="{{asset('public/uploads/categories/'.$category->image)}}" alt="img"
+                                            src="{{asset('public/uploads/subcategories/'.$subcategory->image)}}" alt="img"
                                             class="rounded-circle" height="50px" width="50px">
                                     </td>
                                     <td class="text-center">
                                         <span
-                                            class="badge {{ ($category->status == 1) ? 'badge-success' : 'badge-danger' }}">
-                                            {{ ($category->status == 1) ? 'Active' : 'Inactive' }}
+                                            class="badge {{ ($subcategory->status == 1) ? 'badge-success' : 'badge-danger' }}">
+                                            {{ ($subcategory->status == 1) ? 'Active' : 'Inactive' }}
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{ route('category.edit', encryptor('encrypt', $category->id)) }}"
+                                        <a href="{{ route('subcategory.edit', encryptor('encrypt', $subcategory->id)) }}"
                                             class="text-primary" title="Edit">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
                                         <form
-                                            action="{{ route('category.destroy', encryptor('encrypt', $category->id)) }}"
+                                            action="{{ route('subcategory.destroy', encryptor('encrypt', $subcategory->id)) }}"
                                             method="post" class="d-inline">
                                             @csrf
                                             @method('DELETE')
@@ -81,7 +83,7 @@
                                 @empty
                             <tfoot>
                                 <tr>
-                                    <th colspan="6">No Category Found</th>
+                                    <th colspan="6">No Subcategory Found</th>
                                 </tr>
                             </tfoot>
                             @endforelse

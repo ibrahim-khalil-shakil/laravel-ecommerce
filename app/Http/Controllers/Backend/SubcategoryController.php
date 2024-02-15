@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use App\Models\Category;
 use Exception;
 use File;
 
@@ -23,7 +25,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        return view('Backend.Subcategories.create');
+        $category = Category::get();
+        return view('Backend.Subcategories.create', compact('category'));
     }
 
     /**
@@ -31,7 +34,7 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-         try {
+        try {
             $subcategory = new Subcategory;
             $subcategory->name = $request->subcategoryName;
             $subcategory->category_id = $request->categoryId;
@@ -64,8 +67,9 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
+        $category = Category::get();
         $subcategory = Subcategory::findOrFail(encryptor('decrypt', $id));
-        return view('Backend.Subcategories.edit', compact('subcategory'));
+        return view('Backend.Subcategories.edit', compact('subcategory', 'category'));
     }
 
     /**
@@ -84,9 +88,9 @@ class SubcategoryController extends Controller
                 $subcategory->image = $imageName;
             }
             if ($subcategory->save())
-                return redirect()->route('subcategory.index')->with('success', 'Successfully Saved');
+                return redirect()->route('subcategory.index')->with('info', 'Successfully Updated');
             else
-                return redirect()->back()->withInput()->with('error', 'Failed to save data');
+                return redirect()->back()->withInput()->with('error', 'Failed to updated data');
         } catch (Exception $e) {
             dd($e);
             return redirect()->back()->withInput()->with('error', 'Something went wrong');
