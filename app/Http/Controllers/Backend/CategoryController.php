@@ -83,7 +83,7 @@ class CategoryController extends Controller
                 $category->image = $imageName;
             }
             if ($category->save())
-                return redirect()->route('category.index')->with('success', 'Successfully Updated');
+                return redirect()->route('category.index')->with('info', 'Successfully Updated');
             else
                 return redirect()->back()->withInput()->with('error', 'Failed to update data');
         } catch (Exception $e) {

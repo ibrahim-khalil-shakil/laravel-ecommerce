@@ -45,10 +45,10 @@ class BrandController extends Controller
             if ($brand->save())
                 return redirect()->route('brand.index')->with('success', 'Successfully Saved');
             else
-                return redirect()->back()->with('error', 'Failed to save data');
+                return redirect()->back()->withInput()->with('error', 'Failed to save data');
         } catch (Exception $e) {
             dd($e);
-            return redirect()->back()->with('error', 'Something went wrong');
+            return redirect()->back()->withInput()->with('error', 'Something went wrong');
         }
     }
 
@@ -84,12 +84,12 @@ class BrandController extends Controller
                 $brand->image = $imageName;
             }
             if ($brand->save())
-                return redirect()->route('brand.index')->with('success', 'Successfully Updated');
+                return redirect()->route('brand.index')->with('info', 'Successfully Updated');
             else
-                return redirect()->back()->with('error', 'Failed to update data');
+                return redirect()->back()->withInput()->with('error', 'Failed to update data');
         } catch (Exception $e) {
             dd($e);
-            return redirect()->back()->with('error', 'Something went wrong');
+            return redirect()->back()->withInput()->with('error', 'Something went wrong');
         }
     }
 
@@ -104,8 +104,7 @@ class BrandController extends Controller
         if ($brand->delete()) {
             if (File::exists($image_path))
                 File::delete($image_path);
-
-            return redirect()->back()->with('danger', 'Data Deleted');
+            return redirect()->back()->with('error', 'Data Deleted');
         }
     }
 }

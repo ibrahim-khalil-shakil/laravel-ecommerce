@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-4 text-right">
                             <a href="{{ route('brand.create') }}" class="btn btn-success">
-                                <i class="fa-solid fa-brand-plus"></i> Add New Brand</a>
+                                <i class="fa-solid fa-circle-plus"></i> Add New Brand</a>
                         </div>
                     </div>
                     <!-- /.card-header -->

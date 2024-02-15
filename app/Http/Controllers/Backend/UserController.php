@@ -58,10 +58,10 @@ class UserController extends Controller
             if ($user->save())
                 return redirect()->route('user.index')->with('success', 'Data Saved');
             else
-                redirect()->back()->with('error', 'Please Try Again');
+                redirect()->back()->withInput()->with('error', 'Please Try Again');
         } catch (Exception $e) {
             dd($e);
-            return redirect()->back()->with('error', 'Please Try Again');
+            return redirect()->back()->withInput()->with('error', 'Please Try Again');
         }
     }
 
@@ -111,12 +111,12 @@ class UserController extends Controller
                 $user->image = $imageName;
             }
             if ($user->save())
-                return redirect()->route('user.index')->with('success', 'Data Saved');
+                return redirect()->route('user.index')->with('info', 'Data Saved');
             else
-                redirect()->back()->with('error', 'Please Try Again');
+                redirect()->back()->withInput()->with('error', 'Please Try Again');
         } catch (Exception $e) {
             dd($e);
-            return redirect()->back()->with('error', 'Please Try Again');
+            return redirect()->back()->withInput()->with('error', 'Please Try Again');
         }
     }
 
@@ -131,8 +131,7 @@ class UserController extends Controller
         if ($user->delete()) {
             if (File::exists($image_path))
                 File::delete($image_path);
-
-            return redirect()->back()->with('danger', 'Data Deleted');
+            return redirect()->back()->with('error', 'Data Deleted');
         }
     }
 }
