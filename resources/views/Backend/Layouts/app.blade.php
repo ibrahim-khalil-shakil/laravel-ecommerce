@@ -304,10 +304,10 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li class="nav-item {{Route::is('subcategory*')?'menu-open':''}}">
+                        <li class="nav-item {{Route::is('subcategory*')?'menu-open':''}}">
                             <a href="{{ route('subcategory.index') }}" class="nav-link {{Route::is('subcategory*')?'active':''}}">
-                                <i class="nav-icon fas fa-user-tie"></i>
-                                <p>Subcategories</p><i class="fa-solid fa-table-list"></i>
+                                <i class="nav-icon fa-solid fa-table-list"></i>
+                                <p>Subcategories</p><i class="right fas fa-angle-left"></i>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
@@ -326,7 +326,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item {{Route::is('product*')?'menu-open':''}}">
+                        {{-- <li class="nav-item {{Route::is('product*')?'menu-open':''}}">
                             <a href="{{ route('product.index') }}" class="nav-link {{Route::is('product*')?'active':''}}">
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 <p>Products</p><i class="fa-solid fa-gift"></i>

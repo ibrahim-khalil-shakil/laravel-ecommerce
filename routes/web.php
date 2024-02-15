@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\HomeController as home;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\BrandController as brand;
 use App\Http\Controllers\Backend\CategoryController as category;
+use App\Http\Controllers\Backend\SubcategoryController as subcategory;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,7 @@ Route::middleware(['checkRole'])->prefix('admin')->group(function () {
     Route::resource('role', role::class);
     Route::resource('brand', brand::class);
     Route::resource('category', category::class);
+    Route::resource('subcategory', subcategory::class);
     Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
  });
