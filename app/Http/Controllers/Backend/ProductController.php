@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Subcategory::get();
+        $products = Product::get();
         return view('Backend.Products.index', compact('products'));
     }
 
@@ -93,13 +93,14 @@ class ProductController extends Controller
         try {
             $product = Product::findOrFail(encryptor('decrypt', $id));
             $product->name = $request->productName;
-            $product->description = $request->productdescription;
-            $product->price = $request->productprice;
-            $product->old_price = $request->oldPrice;
-            $product->quantity_in_stock = $request->quantityInStock;
             $product->brand_id = $request->brandId;
             $product->category_id = $request->categoryId;
             $product->subcategory_id = $request->subcategoryId;
+            $product->price = $request->productPrice;
+            $product->old_price = $request->oldPrice;
+            $product->description = $request->productDescription;
+            $product->feature = $request->productFeature;
+            $product->quantity_in_stock = $request->quantityInStock;
             $product->status = $request->status;
             if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();

@@ -43,7 +43,10 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Product Name</th>
-                                    <th>Image</th>
+                                    <th>Category</th>
+                                    <th>Subategory</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -51,12 +54,15 @@
                             <tbody>
                                 @forelse ($products as $product)
                                 <tr>
-                                    <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <td class="text-center"><img
-                                            src="{{asset('public/uploads/products/'.$product->image)}}" alt="img"
-                                            class="rounded-circle" height="50px" width="50px">
+                                    <td class="text-center">
+                                        <img src="{{asset('public/uploads/products/'.$product->image)}}" alt="img"
+                                            width="50" height="50">
                                     </td>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->category?->name }}</td>
+                                    <td>{{ $product->subcategory?->name }}</td>
+                                    <td>{{ $product->brand?->name }}</td>
+                                    <td>{{ $product->price }}</td>
                                     <td class="text-center">
                                         <span
                                             class="badge {{ ($product->status == 1) ? 'badge-success' : 'badge-danger' }}">
@@ -107,6 +113,11 @@
 <link rel="stylesheet"
     href="{{ asset('public/Backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('public/Backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+<style>
+    .table td {
+        vertical-align: middle;
+    }
+</style>
 @endpush
 @push('scripts')
 <!-- DataTables  & Plugins -->
