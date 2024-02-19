@@ -81,7 +81,7 @@
                                 @empty
                             <tfoot>
                                 <tr>
-                                    <th colspan="6">No Category Found</th>
+                                    <th colspan="5">No Category Found</th>
                                 </tr>
                             </tfoot>
                             @endforelse

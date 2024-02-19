@@ -89,7 +89,7 @@
                                 @empty
                             <tfoot>
                                 <tr>
-                                    <th colspan="6">No User Found</th>
+                                    <th colspan="8">No User Found</th>
                                 </tr>
                             </tfoot>
                             @endforelse

@@ -77,7 +77,7 @@
                                 @empty
                             <tfoot>
                                 <tr>
-                                    <th colspan="6">No Role Found</th>
+                                    <th colspan="5">No Role Found</th>
                                 </tr>
                             </tfoot>
                             @endforelse

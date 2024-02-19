@@ -80,7 +80,7 @@
                                 @empty
                             <tfoot>
                                 <tr>
-                                    <th colspan="6">No Brand Found</th>
+                                    <th colspan="5">No Brand Found</th>
                                 </tr>
                             </tfoot>
                             @endforelse
