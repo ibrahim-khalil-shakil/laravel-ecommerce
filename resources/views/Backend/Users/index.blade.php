@@ -81,8 +81,8 @@
                                             method="post" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-danger btn" title="Delete"><i
-                                                    class="fa-regular fa-trash-can"></i></button>
+                                            <button type="submit" class="text-danger btn" title="Delete">
+                                                <i class="fa-regular fa-trash-can"></i></button>
                                         </form>
                                     </td>
                                 </tr>
