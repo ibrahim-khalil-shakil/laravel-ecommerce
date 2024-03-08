@@ -8,23 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('public/Frontend/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('public/Frontend/vendor/font-awesome/css/font-awesome.min.css') }}">
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
     <!-- owl carousel-->
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="{{ asset('public/Frontend/vendor/owl.carousel/assets/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/Frontend/vendor/owl.carousel/assets/owl.theme.default.css') }}">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ asset('public/Frontend/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{{ asset('public/Frontend/css/custom.css') }}">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="{{ asset('public/Frontend/favicon.png') }}">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <script src="{{ asset('public/Frontend/https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js') }}"></script>
+        <script src="{{ asset('public/Frontend/https://oss.maxcdn.com/respond/1.4.2/respond.min.js') }}"></script><![endif]-->
   </head>
   <body>
     <!-- navbar-->
@@ -77,7 +77,7 @@
         
       </div>
       <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
+        <div class="container"><a href="index.html" class="navbar-brand home"><img src="{{ asset('public/Frontend/img/logo.png') }}" alt="Obaju logo" class="d-none d-md-inline-block"><img src="{{ asset('public/Frontend/img/logo-small.png') }}" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
             <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
@@ -176,8 +176,8 @@
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
-                        <div class="banner"><a href="#"><img src="img/banner.jpg" alt="" class="img img-fluid"></a></div>
-                        <div class="banner"><a href="#"><img src="img/banner2.jpg" alt="" class="img img-fluid"></a></div>
+                        <div class="banner"><a href="#"><img src="{{ asset('public/Frontend/img/banner.jpg') }}" alt="" class="img img-fluid"></a></div>
+                        <div class="banner"><a href="#"><img src="{{ asset('public/Frontend/img/banner2.jpg') }}" alt="" class="img img-fluid"></a></div>
                       </div>
                     </div>
                   </li>
@@ -261,10 +261,10 @@
           <div class="row">
             <div class="col-md-12">
               <div id="main-slider" class="owl-carousel owl-theme">
-                <div class="item"><img src="img/main-slider1.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider2.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider3.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider4.jpg" alt="" class="img-fluid"></div>
+                <div class="item"><img src="{{ asset('public/Frontend/img/main-slider1.jpg') }}" alt="" class="img-fluid"></div>
+                <div class="item"><img src="{{ asset('public/Frontend/img/main-slider2.jpg') }}" alt="" class="img-fluid"></div>
+                <div class="item"><img src="{{ asset('public/Frontend/img/main-slider3.jpg') }}" alt="" class="img-fluid"></div>
+                <div class="item"><img src="{{ asset('public/Frontend/img/main-slider4.jpg') }}" alt="" class="img-fluid"></div>
               </div>
               <!-- /#main-slider-->
             </div>
@@ -325,10 +325,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product1.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product1_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product1.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
                     <p class="price"> 
@@ -358,10 +358,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product2.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product2_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product2.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">White Blouse Armani</a></h3>
                     <p class="price"> 
@@ -391,10 +391,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product3.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product3_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product3.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">Black Blouse Versace</a></h3>
                     <p class="price"> 
@@ -409,10 +409,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product3.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product3_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product3.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">Black Blouse Versace</a></h3>
                     <p class="price"> 
@@ -427,10 +427,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product2.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product2_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product2.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">White Blouse Versace</a></h3>
                     <p class="price"> 
@@ -450,10 +450,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product1.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product1_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product1.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">Fur coat</a></h3>
                     <p class="price"> 
@@ -473,10 +473,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product2.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product2_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product2.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">White Blouse Armani</a></h3>
                     <p class="price"> 
@@ -506,10 +506,10 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product3.jpg') }}" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="detail.html"><img src="{{ asset('public/Frontend/img/product3_2.jpg') }}" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="detail.html" class="invisible"><img src="{{ asset('public/Frontend/img/product3.jpg') }}" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="detail.html">Black Blouse Versace</a></h3>
                     <p class="price"> 
@@ -537,9 +537,9 @@
               <h3>Get Inspired</h3>
               <p class="lead">Get the inspiration from our world class designers</p>
               <div id="get-inspired" class="owl-carousel owl-theme">
-                <div class="item"><a href="#"><img src="img/getinspired1.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
+                <div class="item"><a href="#"><img src="{{ asset('public/Frontend/img/getinspired1.jpg') }}" alt="Get inspired" class="img-fluid"></a></div>
+                <div class="item"><a href="#"><img src="{{ asset('public/Frontend/img/getinspired2.jpg') }}" alt="Get inspired" class="img-fluid"></a></div>
+                <div class="item"><a href="#"><img src="{{ asset('public/Frontend/img/getinspired3.jpg') }}" alt="Get inspired" class="img-fluid"></a></div>
               </div>
             </div>
           </div>
@@ -676,11 +676,11 @@
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
+    <script src="{{ asset('public/Frontend/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('public/Frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('public/Frontend/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>
+    <script src="{{ asset('public/Frontend/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/Frontend/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js') }}"></script>
+    <script src="{{ asset('public/Frontend/js/front.js') }}"></script>
   </body>
 </html>
