@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Products\StoreRequest;
+use App\Http\Requests\Products\UpdateRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Subcategory;
@@ -36,7 +37,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         try {
             $product = new Product;
@@ -89,7 +90,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try {
             $product = Product::findOrFail(encryptor('decrypt', $id));
