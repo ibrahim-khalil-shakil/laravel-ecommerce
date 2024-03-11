@@ -50,7 +50,7 @@ class ProductController extends Controller
             $product->description = $request->productDescription;
             $product->feature = $request->productFeature;
             $product->quantity_in_stock = $request->quantityInStock;
-            $product->tag = $request->productTag;
+            $product->tags = $request->productTags;
             $product->status = $request->status;
             if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
@@ -103,7 +103,7 @@ class ProductController extends Controller
             $product->description = $request->productDescription;
             $product->feature = $request->productFeature;
             $product->quantity_in_stock = $request->quantityInStock;
-            $product->tag = $request->productTag;
+            $product->tags = $request->productTags;
             $product->status = $request->status;
             if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
