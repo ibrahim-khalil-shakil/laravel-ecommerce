@@ -9,6 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'tags' => 'array',
+    ];
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
