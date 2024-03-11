@@ -139,6 +139,15 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
+                                <label for="productTags">Tag</label>
+                                <input type="text" class="form-control" name="productTags"
+                                    value="{{ old('productTags') }}" placeholder="Enter tags separated by commas">
+                                <small id="tagHelp" class="form-text text-muted">e.g., hot, sell, popular</small>
+                                @if ($errors->has('productTags'))
+                                <span class="text-danger"> {{ $errors->first('productTags') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group col-md-6">
                                 <label for="image">Image</label>
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -152,7 +161,6 @@
                             </div>
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
