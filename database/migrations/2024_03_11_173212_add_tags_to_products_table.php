@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->enum('tag', ['hot', 'sell', 'popular', 'trending', 'new', 'featured'])->nullable();
+            $table->json('tags')->nullable(); // Define the JSON column for storing tags
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('tag');
+            $table->dropColumn('tags');
         });
     }
 };
