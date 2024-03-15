@@ -23,7 +23,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'productName' => 'required|max:255',
-            'price' => 'required',
+            'productPrice' => 'required',
             'categoryId' => 'required|max:2',
         ];
     }
