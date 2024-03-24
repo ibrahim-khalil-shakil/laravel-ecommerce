@@ -22,7 +22,10 @@ class HomeController extends Controller
     {
         $all = Product::get();
         $fruits = Product::where('category','fruits')->get();
-        return view('Frontend.home', compact('all','fruits'));
+        $vegetables = Product::where('category', 'vegetables')->get();
+        $meats = Product::where('category','meats')->get();
+        $bevarages = Product::where('category', 'bevarages')->get();
+        return view('Frontend.home', compact('all','fruits', 'vegetables', 'meats','bevarages'));
     }
 
     /**
