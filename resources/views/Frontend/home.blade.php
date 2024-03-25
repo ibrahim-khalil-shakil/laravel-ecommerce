@@ -35,11 +35,16 @@
         </div>
         <div class="featured__controls">
           <ul>
-            <li class="active" data-filter="*">All</li>
+            @forelse ($categories as $category)
+            <li class="" data-filter="">{{$category->name}}</li>
+            @empty
+            <li class="" data-filter="">No Category Found</li>
+            @endforelse
+            {{-- <li class="active" data-filter="*">All</li>
             <li data-filter=".oranges">Fruits</li>
             <li data-filter=".fresh-meat">Meats</li>
             <li data-filter=".vegetables">Vegetables</li>
-            <li data-filter=".fastfood">Bevarages</li>
+            <li data-filter=".fastfood">Bevarages</li> --}}
           </ul>
         </div>
       </div>
