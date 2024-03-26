@@ -16,7 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         $subcategories = Subcategory::get();
-        return view('Frontend.home', compact('subcategories'));
+        $categories = Category::get();
+        return view('Frontend.home', compact('subcategories', 'categories'));
     }
     public function featuredProducts()
     {
@@ -26,7 +27,7 @@ class HomeController extends Controller
         $vegetables = Product::where('category', 'vegetables')->get();
         $meats = Product::where('category','meats')->get();
         $bevarages = Product::where('category', 'bevarages')->get();
-        return view('Frontend.home', compact('category','all','fruits', 'vegetables', 'meats','bevarages'));
+        return view('Frontend.home', compact('categories','all','fruits', 'vegetables', 'meats','bevarages'));
     }
 
     /**
