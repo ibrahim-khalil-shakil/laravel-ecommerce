@@ -36,7 +36,7 @@
         <div class="featured__controls">
           <ul>
             @forelse ($categories as $category)
-            <li class="" data-filter="">{{$category->name}}</li>
+            <li class="" data-filter=".{{$category->name}}">{{$category->name}}</li>
             @empty
             <li class="" data-filter="">No Category Found</li>
             @endforelse
