@@ -66,7 +66,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+      {{-- <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
         <div class="featured__item">
           <div class="featured__item__pic set-bg"
             data-setbg="{{ asset('public/Frontend/img/featured/feature-2.jpg') }}">
@@ -177,7 +177,7 @@
             <h5>$30.00</h5>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>
