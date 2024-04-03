@@ -42,8 +42,10 @@
                             <div class="form-group col-md-6">
                                 <label for="status">Status</label>
                                 <select class="form-control" name="status">
-                                    <option value="1" {{ old('status', $product->status)=="1" ? 'selected' : '' }}>Active</option>
-                                    <option value="0" {{ old('status', $product->status)=="0" ? 'selected' : '' }}>Inactive</option>
+                                    <option value="1" {{ old('status', $product->status)=="1" ? 'selected' : ''
+                                        }}>Active</option>
+                                    <option value="0" {{ old('status', $product->status)=="0" ? 'selected' : ''
+                                        }}>Inactive</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -51,7 +53,8 @@
                             @endif
                             <div class="form-group col-md-6">
                                 <label for="productName">Product Name</label>
-                                <input type="text" class="form-control" name="productName" value="{{ old('productName',$product->name) }}">
+                                <input type="text" class="form-control" name="productName"
+                                    value="{{ old('productName',$product->name) }}">
                                 @if ($errors->has('productName'))
                                 <span class="text-danger"> {{ $errors->first('productName') }}</span>
                                 @endif
@@ -60,7 +63,8 @@
                                 <label for="brandId">Brand</label>
                                 <select class="form-control" name="brandId">
                                     @forelse ($brand as $b)
-                                    <option value="{{$b->id}}" {{old('brandId',$product->brand_id)==$b->id?'selected':''}}>
+                                    <option value="{{$b->id}}" {{old('brandId',$product->
+                                        brand_id)==$b->id?'selected':''}}>
                                         {{$b->name}}</option>
                                     @empty
                                     <option value="">No Brand Found</option>
@@ -74,7 +78,8 @@
                                 <label for="categoryId">Category</label>
                                 <select class="form-control" name="categoryId">
                                     @forelse ($category as $cat)
-                                    <option value="{{$cat->id}}" {{old('categoryId',$product->category_id)==$cat->id?'selected':''}}>
+                                    <option value="{{$cat->id}}" {{old('categoryId',$product->
+                                        category_id)==$cat->id?'selected':''}}>
                                         {{$cat->name}}</option>
                                     @empty
                                     <option value="">No Category Found</option>
@@ -88,7 +93,8 @@
                                 <label for="subcategoryId">Subcategory</label>
                                 <select class="form-control" name="subcategoryId">
                                     @forelse ($subcategory as $subcat)
-                                    <option value="{{$subcat->id}}" {{old('subcategoryId',$product->subcategory_id)==$subcat->id?'selected':''}}>
+                                    <option value="{{$subcat->id}}" {{old('subcategoryId',$product->
+                                        subcategory_id)==$subcat->id?'selected':''}}>
                                         {{$subcat->name}}</option>
                                     @empty
                                     <option value="">No Subcategory Found</option>
@@ -100,47 +106,52 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="productPrice">Price</label>
-                                <input type="number" class="form-control" name="productPrice" value="{{ old('productPrice',$product->price) }}">
+                                <input type="number" class="form-control" name="productPrice"
+                                    value="{{ old('productPrice',$product->price) }}">
                                 @if ($errors->has('productPrice'))
                                 <span class="text-danger"> {{ $errors->first('productPrice') }}</span>
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="oldPrice">Old Price</label>
-                                <input type="number" class="form-control" name="oldPrice" value="{{ old('oldPrice',$product->old_price) }}">
+                                <input type="number" class="form-control" name="oldPrice"
+                                    value="{{ old('oldPrice',$product->old_price) }}">
                                 @if ($errors->has('oldPrice'))
                                 <span class="text-danger"> {{ $errors->first('oldPrice') }}</span>
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="productDescription">Product Description</label>
-                                <textarea name="productDescription" class="form-control">{{ old('productDescription',$product->description) }}</textarea>
+                                <textarea name="productDescription"
+                                    class="form-control">{{ old('productDescription',$product->description) }}</textarea>
                                 @if ($errors->has('productDescription'))
                                 <span class="text-danger"> {{ $errors->first('productDescription') }}</span>
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="productFeature">Features</label>
-                                <textarea name="productFeature" class="form-control">{{ old('productFeature',$product->feature) }}</textarea>
+                                <textarea name="productFeature"
+                                    class="form-control">{{ old('productFeature',$product->feature) }}</textarea>
                                 @if ($errors->has('productFeature'))
                                 <span class="text-danger"> {{ $errors->first('productFeature') }}</span>
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="quantityInStock">Stock Quantity</label>
-                                <input type="number" class="form-control" name="quantityInStock" value="{{ old('quantityInStock',$product->quantity_in_stock) }}">
+                                <input type="number" class="form-control" name="quantityInStock"
+                                    value="{{ old('quantityInStock',$product->quantity_in_stock) }}">
                                 @if ($errors->has('quantityInStock'))
                                 <span class="text-danger"> {{ $errors->first('quantityInStock') }}</span>
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="productTags">Tag</label>
-                                <input type="text" class="form-control" name="productTags"
-                                    value="{{ old('productTags',$product->tags) }}" placeholder="Enter tags separated by commas">
-                                <small id="tagHelp" class="form-text text-muted">e.g., hot, sell, popular</small>
-                                @if ($errors->has('productTags'))
-                                <span class="text-danger"> {{ $errors->first('productTags') }}</span>
-                                @endif
+                                <label for="isFeatured">Featured</label>
+                                <select class="form-control" name="isFeatured">
+                                    <option value="0" {{ old('isFeatured',$product->is_featured)=="0" ? 'selected' : ''
+                                        }}>No</option>
+                                    <option value="1" {{ old('isFeatured',$product->is_featured)=="1" ? 'selected' : ''
+                                        }}>Yes</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="image">Image</label>

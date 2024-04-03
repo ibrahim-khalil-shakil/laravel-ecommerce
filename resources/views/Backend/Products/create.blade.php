@@ -139,13 +139,11 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="productTags">Tag</label>
-                                <input type="text" class="form-control" name="productTags"
-                                    value="{{ old('productTags') }}" placeholder="Enter tags separated by commas">
-                                <small id="tagHelp" class="form-text text-muted">e.g., hot, sell, popular</small>
-                                @if ($errors->has('productTags'))
-                                <span class="text-danger"> {{ $errors->first('productTags') }}</span>
-                                @endif
+                                <label for="isFeatured">Featured</label>
+                                <select class="form-control" name="isFeatured">
+                                    <option value="0" {{ old('isFeatured')=="0" ? 'selected' : '' }}>No</option>
+                                    <option value="1" {{ old('isFeatured')=="1" ? 'selected' : '' }}>Yes</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="image">Image</label>
