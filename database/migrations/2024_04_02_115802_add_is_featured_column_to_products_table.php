@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            // Add the new column after the quantity_in_stock column
+            $table->boolean('is_featured')->default(0)->after('quantity_in_stock')->comment('0 => Not Featured, 1 => Featured');
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            // Drop the newly added column
+            $table->dropColumn('is_featured');
         });
     }
 };
