@@ -50,19 +50,9 @@ class ProductController extends Controller
             $product->description = $request->productDescription;
             $product->feature = $request->productFeature;
             $product->quantity_in_stock = $request->quantityInStock;
+            $product->is_featured = $request->isFeatured;
             // $product->tags = $request->productTags;
             $product->status = $request->status;
-            // Extract tags from the form input
-            $tags = $request->input('productTags');
-
-            // Convert comma-separated tags into an array
-            $tagsArray = explode(',', $tags);
-
-            // Convert array into JSON format
-            $tagsJson = json_encode($tagsArray);
-
-            // Assign tags to the product
-            $product->tags = $tagsJson;
             if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/products/'), $imageName);
@@ -114,19 +104,9 @@ class ProductController extends Controller
             $product->description = $request->productDescription;
             $product->feature = $request->productFeature;
             $product->quantity_in_stock = $request->quantityInStock;
+            $product->is_featured = $request->isFeatured;
             // $product->tags = $request->productTags;
             $product->status = $request->status;
-            // Extract tags from the form input
-            $tags = $request->input('productTags');
-
-            // Convert comma-separated tags into an array
-            $tagsArray = explode(',', $tags);
-
-            // Convert array into JSON format
-            $tagsJson = json_encode($tagsArray);
-
-            // Assign tags to the product
-            $product->tags = $tagsJson;
             if ($request->hasFile('image')) {
                 $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/products/'), $imageName);
