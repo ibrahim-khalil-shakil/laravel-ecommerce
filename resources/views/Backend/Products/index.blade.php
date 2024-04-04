@@ -47,6 +47,7 @@
                                     <th>Subategory</th>
                                     <th>Brand</th>
                                     <th>Price</th>
+                                    <th>Featured?</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -63,6 +64,12 @@
                                     <td>{{ $product->subcategory?->name }}</td>
                                     <td>{{ $product->brand?->name }}</td>
                                     <td>{{ $product->price }}</td>
+                                    <td class="text-center">
+                                        <span
+                                            class="badge {{ ($product->is_featured == 1) ? 'badge-info' : 'badge-primary' }}">
+                                            {{ ($product->is_featured == 1) ? 'Featured' : 'Regular' }}
+                                        </span>
+                                    </td>
                                     <td class="text-center">
                                         <span
                                             class="badge {{ ($product->status == 1) ? 'badge-success' : 'badge-danger' }}">
