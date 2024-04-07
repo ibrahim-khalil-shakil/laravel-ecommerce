@@ -17,9 +17,7 @@ class HomeController extends Controller
     {
         $subcategories = Subcategory::get();
         $categories = Category::get();
-        $featuredProducts = Product::whereJsonContains('tags', ['featured'])->get();
-        dd($featuredProducts);
-        return view('Frontend.home', compact('subcategories', 'categories', 'featuredProducts'));
+        return view('Frontend.home', compact('subcategories', 'categories'));
     }
     public function featuredProducts()
     {
