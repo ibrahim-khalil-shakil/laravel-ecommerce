@@ -50,7 +50,6 @@
       </div>
     </div>
     <div class="row featured__filter">
-      @forelse($featuredProducts as $product)
       <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
         <div class="featured__item">
           <div class="featured__item__pic set-bg"
@@ -62,16 +61,14 @@
             </ul>
           </div>
           <div class="featured__item__text">
-            <h6><a href="#">{{$product->name}}</a></h6>
+            <h6><a href="#">Product Name</a></h6>
             <h5>$30.00</h5>
           </div>
         </div>
       </div>
-      @empty
       <div class="col-lg-12">
         <p>No featured products found.</p>
       </div>
-      @endforelse
       {{-- <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
         <div class="featured__item">
           <div class="featured__item__pic set-bg"
