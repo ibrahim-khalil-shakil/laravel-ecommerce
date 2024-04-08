@@ -9,15 +9,16 @@
     <div class="row">
       <div class="categories__slider owl-carousel">
         @forelse ($subcategories as $subcategory)
-            <div class="col-lg-3">
-              <div class="categories__item set-bg" data-setbg="{{ asset('public/uploads/subcategories/'.$subcategory->image) }}">
-                <h5><a href="#">{{$subcategory->name}}</a></h5>
-              </div>
-            </div>
+        <div class="col-lg-3">
+          <div class="categories__item set-bg"
+            data-setbg="{{ asset('public/uploads/subcategories/'.$subcategory->image) }}">
+            <h5><a href="#">{{$subcategory->name}}</a></h5>
+          </div>
+        </div>
         @empty
-            <div class="col-lg-3">
-              <h5>No Categories</h5>
-            </div>
+        <div class="col-lg-3">
+          <h5>No Categories</h5>
+        </div>
         @endforelse
       </div>
     </div>
@@ -50,6 +51,7 @@
       </div>
     </div>
     <div class="row featured__filter">
+      @forelse ($featuredProducts as $product)
       <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
         <div class="featured__item">
           <div class="featured__item__pic set-bg"
@@ -61,14 +63,18 @@
             </ul>
           </div>
           <div class="featured__item__text">
-            <h6><a href="#">Product Name</a></h6>
+            <h6><a href="#">{{$product->name}}</a></h6>
             <h5>$30.00</h5>
           </div>
         </div>
       </div>
+      @empty
       <div class="col-lg-12">
         <p>No featured products found.</p>
       </div>
+      @endforelse
+
+
       {{-- <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
         <div class="featured__item">
           <div class="featured__item__pic set-bg"
