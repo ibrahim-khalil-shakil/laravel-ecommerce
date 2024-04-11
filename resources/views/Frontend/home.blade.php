@@ -36,6 +36,7 @@
         </div>
         <div class="featured__controls">
           <ul>
+            <li class="active" data-filter="*">All</li>
             @forelse ($categories as $category)
             <li class="" data-filter=".{{$category->name}}">{{$category->name}}</li>
             @empty
