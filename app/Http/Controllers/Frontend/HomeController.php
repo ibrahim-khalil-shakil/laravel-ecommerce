@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         $subcategories = Subcategory::get();
         $categories = Category::get();
-        $featuredProducts = Product::where('is_featured', true)->get();
+        $featuredProducts = Product::where('is_featured', true)->orderBy('updated_at', 'desc')->take(8)->get();
         // dd($featuredProducts);
         return view('Frontend.home', compact('subcategories', 'categories', 'featuredProducts'));
     }
